@@ -46,16 +46,17 @@ Sample JSON
   "category": "Electronics"
 }
 ```
+
 Dependencies
+
+```
 Spring Boot
 Spring Data MongoDB
 Lombok
 Springfox Swagger (for API documentation)
+```
 Contributing
 Contributions are welcome! Please feel free to submit pull requests or open issues for any improvements or bug fixes.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 
 
