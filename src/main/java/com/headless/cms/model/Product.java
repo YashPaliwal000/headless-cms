@@ -1,5 +1,7 @@
 package com.headless.cms.model;
 
+import java.util.Map;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,5 +20,7 @@ public class Product {
     private String description;
     private double price;
     private int quantity;
+    private String category;
+    private Map<String, Object> customFields;
     
 }
