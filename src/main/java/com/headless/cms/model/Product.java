@@ -10,9 +10,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Document(collection = "products")
-@Data // Lombok annotation to generate getters, setters, toString, hashCode, and equals
-@NoArgsConstructor // Lombok annotation to generate a no-args constructor
-@AllArgsConstructor // Lombok annotation to generate an all-args constructor
+@Data 
+@NoArgsConstructor 
+@AllArgsConstructor 
 public class Product {
     @Id
     private String id;
