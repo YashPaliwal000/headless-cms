@@ -1,5 +1,7 @@
 package com.headless.cms.controller;
 
+import com.headless.cms.model.EmailDetails;
+import com.headless.cms.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,9 +20,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private EmailService emailService;
+
     @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
-        return userService.createUser(user);
+        User createdUser = userService.createUser(user);
+        if(createdUser != null){
+            emailService.sendSimpleMail(new EmailDetails(user.getEmail(), "Welcome To Port Headless-CMS",
+                    "WELCOME TO THE EASY WORLD!!",""));
+        }
+        return createdUser;
     }
 
     @GetMapping("/{id}")
