@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor 
 @AllArgsConstructor 
 public class User {
+
+    public static final String SEQUENCE_NAME = "users_sequence";
+
     @Id
     private Long id;
     private String username;
