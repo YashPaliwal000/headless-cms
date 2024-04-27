@@ -14,9 +14,13 @@ public class UserService {
     private UserRepository userRepository;
 
     @Autowired
+    private SequenceGeneratorService sequenceGeneratorService;
+
+    @Autowired
     PasswordEncoder passwordEncoder;
 
     public User createUser(User user) {
+        user.setId(sequenceGeneratorService.generateSequence(User.SEQUENCE_NAME));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
